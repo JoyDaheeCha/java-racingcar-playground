@@ -4,10 +4,22 @@ public class Car {
     private final String name;
     private int position;
 
+    /**
+    * 프로덕션용 생성자
+    * */
     public Car(String name) {
         isValid(name);
         this.name = name;
         this.position = 0;
+    }
+
+    /**
+    * 테스트용 생성자
+    * */
+    public Car(String name, int position) {
+        isValid(name);
+        this.name = name;
+        this.position = position;
     }
 
     private void isValid(String name) {
@@ -24,5 +36,14 @@ public class Car {
 
     public int getPosition() {
         return this.position;
+    }
+
+    public boolean hasGreaterPosition(int position) {
+        return this.position > position;
+    }
+
+
+    public boolean isMax(int max) {
+        return this.position == max;
     }
 }
