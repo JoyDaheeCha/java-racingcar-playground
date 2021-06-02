@@ -48,11 +48,12 @@ pobi, honux가 최종 우승했습니다
 TO-DO list
 ---
 - [ ] 자동차 만들기
-    - [ ] Position
-    - [ ] Name
+    - [X] Position
+    - [X] Name
         - [X] 5자를 초과할 수 없다
     - [ ] 자동차 움직임
-        - [ ] 전진 or 멈춤
+        - [X] 전진 or 멈춤
+        - [ ] 랜덤하게 움직임 결정 
 - [ ] Racing 정보
     - [ ] 자동차 리스트 
     - [ ] 시도 횟수

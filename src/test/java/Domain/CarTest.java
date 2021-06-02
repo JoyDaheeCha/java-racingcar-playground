@@ -15,5 +15,16 @@ public class CarTest {
         Assertions.assertDoesNotThrow(()->new Car("crong"));
     }
 
+    @Test
+    public void Car_move_정상테스트_input이_true면_전진_false면_멈춤() {
+        Car crong = new Car("crong");
+        crong.move(true);
+        Car hounux = new Car("honux");
+        hounux.move(false);
+        assertThat(crong.getPosition()).isEqualTo(1);
+        assertThat(hounux.getPosition()).isEqualTo(0);
+    }
+
+
 }
 
