@@ -13,13 +13,12 @@ public class RaceTest {
         Car crong = new Car("crong");
         Car honux = new Car("honux");
         Car pobi = new Car("pobi");
-        Race race = new Race(new Cars(Arrays.asList(crong, honux, pobi)), 5);
+        Cars cars = new Cars(Arrays.asList(crong,honux,pobi));
         Movable moveTrue = () -> true;
         crong.move(moveTrue);
         honux.move(moveTrue);
         pobi.move(moveTrue);
         pobi.move(moveTrue);
-
-        assertThat(race.getWinner()).isEqualTo(pobi);
+        assertThat(cars.getWinner()).isEqualTo(Arrays.asList(pobi));
     }
 }
