@@ -1,5 +1,7 @@
 package Domain;
 
+import UI.OutputView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,5 +45,7 @@ public class Cars {
         return max;
     }
 
-
+    public void printCurrentPosition() {
+        OutputView.printCurrentPosition(this.cars);
+    }
 }

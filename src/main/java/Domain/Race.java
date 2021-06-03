@@ -1,5 +1,7 @@
 package Domain;
 
+import UI.OutputView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class Race {
         Movable moveStrategy = new RandomMove();
         for(int i=0; i<trial; i++) {
             cars.moveCars(moveStrategy);
+            cars.printCurrentPosition();
         }
     }
 
