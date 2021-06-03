@@ -1,12 +1,26 @@
 package UI;
 
+import Domain.Car;
+import java.util.List;
+
 public class OutputView {
-    public void printCurrentPosition(int name, int position) {
-        String positionDrawing = "";
+    public static void printCurrentPosition(List<Car> cars) {
+        cars.stream()
+                .map(car -> car.getName() + " : " + drawLine(car.getPosition()))
+                .forEach(System.out::println);
+        drawEmptyLine();
+    }
+
+    private static void drawEmptyLine() {
+        System.out.println();
+    }
+
+    private static String drawLine(int position) {
+        String line = "";
         for (int i = 0; i < position; i++) {
-            positionDrawing = positionDrawing + "-";
+            line = line + "-";
         }
-        System.out.println(name + ": " + positionDrawing);
+        return line;
     }
 
 
