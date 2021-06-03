@@ -3,53 +3,47 @@ package Domain;
 import java.util.Objects;
 
 public class Car {
-    private final String name;
-    private int position;
+    private final Name name;
+    private Position position;
 
     /**
     * 프로덕션용 생성자
     * */
     public Car(String name) {
-        isValid(name);
-        this.name = name;
-        this.position = 0;
+        this.name = new Name(name);
+        this.position = new Position();
     }
 
     /**
     * 테스트용 생성자
     * */
     public Car(String name, int position) {
-        isValid(name);
-        this.name = name;
-        this.position = position;
+        this.name = new Name(name);
+        this.position = new Position(position);
     }
 
-    private void isValid(String name) {
-        if (name.length()==0 || name.length() > 5) {
-            throw new IllegalArgumentException("자동차 이름은 1글자 이상이며, 5글자를 초과할 수 없습니다.");
-        }
-    }
 
     public void move(Movable moveStrategy) {
         if(moveStrategy.createMovable()) {
-            position++;
+            position.increase();
         }
     }
 
     public int getPosition() {
-        return this.position;
+        return position.getPosition();
     }
+
     public String getName() {
-        return this.name;
+        return name.getName();
     }
 
     public boolean hasGreaterPosition(int position) {
-        return this.position > position;
+        return this.position.isGreatherPosition(position);
     }
 
 
-    public boolean isMax(int max) {
-        return this.position == max;
+    public boolean hasMaxPosition(int max) {
+        return this.position.isMax(max);
     }
 
     @Override
