@@ -9,13 +9,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        InputView iv = new InputView();
-        OutputView ov = new OutputView();
-
-        List<String> carNames =  iv.getCarNames();
-        int trial = iv.getTrials();
-
-        Race race = new Race(carNames, trial);
-
+        Race race = new Race(InputView.getCarNames(), InputView.getTrials());
+        race.doRacingGame();
+        OutputView.printWinners(race.getWinner());
     }
 }
