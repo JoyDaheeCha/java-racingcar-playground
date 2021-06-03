@@ -28,8 +28,8 @@ public class Car {
         }
     }
 
-    public void move(boolean shouldMove) {
-        if(shouldMove) {
+    public void move(Movable moveStrategy) {
+        if(moveStrategy.createMovable()) {
             position++;
         }
     }

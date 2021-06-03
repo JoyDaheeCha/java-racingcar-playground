@@ -2,12 +2,19 @@ package Domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cars {
     List<Car> cars;
 
     public Cars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public void moveCars(Movable moveStrategy) {
+        for (Car car:cars) {
+            car.move(moveStrategy);
+        }
     }
 
     //TODO 2-depth indent 제거 방법 찾기
